@@ -4,13 +4,14 @@ requires-python = ">=3.13"
 
 [manifest]
 members = [
+    "pkg-dynamic",
     "pkg-versioned",
     "testy",
 ]
 
 [[package]]
 name = "pkg-dynamic"
-source = { directory = "packages/pkg_dynamic" }
+source = { editable = "packages/pkg_dynamic" }
 
 [[package]]
 name = "pkg-editable"
@@ -34,7 +35,7 @@ dependencies = [
 
 [package.metadata]
 requires-dist = [
-    { name = "pkg-dynamic", directory = "packages/pkg_dynamic" },
+    { name = "pkg-dynamic", editable = "packages/pkg_dynamic" },
     { name = "pkg-editable", editable = "packages/pkg_editable" },
     { name = "pkg-versioned", editable = "packages/pkg_versioned" },
 ]
