@@ -1,0 +1,40 @@
+version = 1
+revision = 3
+requires-python = ">=3.13"
+
+[manifest]
+members = [
+    "pkg-versioned",
+    "testy",
+]
+
+[[package]]
+name = "pkg-dynamic"
+source = { directory = "packages/pkg_dynamic" }
+
+[[package]]
+name = "pkg-editable"
+version = "0.1.0"
+source = { editable = "packages/pkg_editable" }
+
+[[package]]
+name = "pkg-versioned"
+version = "1.0.0"
+source = { editable = "packages/pkg_versioned" }
+
+[[package]]
+name = "testy"
+version = "0.1.0"
+source = { virtual = "." }
+dependencies = [
+    { name = "pkg-dynamic" },
+    { name = "pkg-editable" },
+    { name = "pkg-versioned" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "pkg-dynamic", directory = "packages/pkg_dynamic" },
+    { name = "pkg-editable", editable = "packages/pkg_editable" },
+    { name = "pkg-versioned", editable = "packages/pkg_versioned" },
+]

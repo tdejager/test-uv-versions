@@ -1,0 +1,21 @@
+[project]
+name = "testy"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "pkg-editable",
+    "pkg-dynamic",
+    "pkg-versioned",
+]
+
+[tool.uv.sources]
+pkg-editable = { path = "packages/pkg_editable", editable = true }
+pkg-dynamic = { path = "packages/pkg_dynamic" }
+pkg-versioned = { workspace = true }
+
+[tool.uv.workspace]
+members = [
+    "packages/pkg_versioned",
+]

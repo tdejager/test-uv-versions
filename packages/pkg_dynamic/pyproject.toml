@@ -1,0 +1,13 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pkg-dynamic"
+dynamic = ["version"]
+description = "Package that derives its version dynamically from code"
+requires-python = ">=3.11"
+readme = "README.md"
+
+[tool.setuptools.dynamic]
+version = { attr = "pkg_dynamic.VERSION" }
